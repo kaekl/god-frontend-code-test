@@ -1,16 +1,7 @@
 import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 
-import { CarouselBtnGroup } from './index';
-
-export default {
-  title: 'Molecules/CarouselBtnGroup',
-  component: CarouselBtnGroup,
-} as ComponentMeta<typeof CarouselBtnGroup>;
-
-const Template: ComponentStory<typeof CarouselBtnGroup> = (args) => (
-  <CarouselBtnGroup {...args} />
-);
+import { CarouselButtonGroup } from './index';
 
 const carouselInternalState = {
   itemWidth: 490,
@@ -21,6 +12,15 @@ const carouselInternalState = {
   domLoaded: true,
   transform: -0,
 };
+
+export default {
+  title: 'Molecules/CarouselButtonGroup',
+  component: CarouselButtonGroup,
+} as ComponentMeta<typeof CarouselButtonGroup>;
+
+const Template: ComponentStory<typeof CarouselButtonGroup> = (args) => (
+  <CarouselButtonGroup {...args} />
+);
 
 export const Default = Template.bind({});
 Default.args = {

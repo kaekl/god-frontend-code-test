@@ -2,7 +2,7 @@ import React from 'react';
 import { ComponentMeta, ComponentStory } from '@storybook/react';
 import type { ProductItemType } from '@/shared-types';
 
-import { ProductCarousel } from './index';
+import { FilterItem } from './index';
 
 const productItemsData: Array<ProductItemType> = [
   {
@@ -50,15 +50,16 @@ const productItemsData: Array<ProductItemType> = [
 ];
 
 export default {
-  title: 'Organisms/ProductCarousel',
-  component: ProductCarousel,
-} as ComponentMeta<typeof ProductCarousel>;
+  title: 'Molecules/FilterItem',
+  component: FilterItem,
+} as ComponentMeta<typeof FilterItem>;
 
-const Template: ComponentStory<typeof ProductCarousel> = (args) => (
-  <ProductCarousel {...args} />
+const Template: ComponentStory<typeof FilterItem> = (args) => (
+  <FilterItem {...args} />
 );
 
 export const Default = Template.bind({});
 Default.args = {
   productItems: productItemsData,
+  setFilterItems: () => {},
 };

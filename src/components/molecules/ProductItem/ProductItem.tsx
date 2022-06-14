@@ -1,7 +1,7 @@
 import React from 'react';
 import { View, Block, Flex, Link, Spacer } from 'vcc-ui';
 import { ProductTitle, ProductImage } from '@/components/atoms';
-import { useDetectDevice } from '@/hooks';
+import { useIsDesktop } from '@/hooks';
 import type { ProductItemType } from '@/shared-types';
 
 interface ProductItemProps {
@@ -14,7 +14,7 @@ export const ProductItem: React.FC<ProductItemProps> = ({
   displayLinks = false,
 }) => {
   const { id, modelName, bodyType, modelType, imageUrl } = productItem;
-  const isDesktop = useDetectDevice();
+  const isDesktop = useIsDesktop();
 
   return (
     <View padding={2} marginBottom={isDesktop ? 12 : 2} alignItems='center'>

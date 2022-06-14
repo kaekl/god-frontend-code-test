@@ -6,14 +6,13 @@ import { useEffect, useState } from 'react';
  * Instead, we should for example use a library such as 'react-device-detect'
  * */
 
-export const useDetectDevice = () => {
+const useIsDesktop = () => {
   const [width, setWidth] = useState<number>(0);
   const handleWindowSizeChange = () => {
     setWidth(window.innerWidth);
   };
 
   useEffect(() => {
-
     window.addEventListener('resize', handleWindowSizeChange);
     window.addEventListener('load', handleWindowSizeChange);
     return () => {
@@ -24,3 +23,5 @@ export const useDetectDevice = () => {
 
   return  1024 <= width;
 };
+
+export default useIsDesktop

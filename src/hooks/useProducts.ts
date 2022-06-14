@@ -7,7 +7,7 @@ import useSWR from 'swr';
 const url = 'api/cars.json';
 const fetcher = (url: string) => fetch(url).then((res) => res.json());
 
-export const useGetProducts = ( ) => {
+const useProducts = ( ) => {
     const { data, error } = useSWR(url, fetcher);
     
     return {
@@ -16,3 +16,5 @@ export const useGetProducts = ( ) => {
         isError: error
     }
 }
+
+export default useProducts

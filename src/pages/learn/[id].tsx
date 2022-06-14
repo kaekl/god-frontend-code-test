@@ -1,11 +1,11 @@
 import React from 'react';
-import { Flex, Text } from 'vcc-ui';
+import { View, Text } from 'vcc-ui';
 
 const LearnPage: React.FC = () => {
   return (
-    <Flex extend={{ alignItems: 'center', padding: 24 }}>
+    <View direction='row' justifyContent='center' paddingTop='12'>
       <Text variant='peary'>Learn more</Text>
-    </Flex>
+    </View>
   );
 };
 

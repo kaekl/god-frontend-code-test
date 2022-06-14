@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { LoadingBar } from 'vcc-ui';
 import { ProductCarousel } from '@/components/organisms';
-import { useGetProducts } from '@/hooks';
+import { useProducts } from '@/hooks';
 import type { ProductItemType } from '@/shared-types';
 
 const HomePage: React.FC = () => {
   const [productItems, setProductItems] = useState<Array<ProductItemType>>([]);
-  const { items, isLoading, isError } = useGetProducts();
+  // Note that this is not ideal since the data is only client-fetched
+  const { items, isLoading, isError } = useProducts();
 
   useEffect(() => {
     setProductItems(items);
